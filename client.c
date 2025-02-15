@@ -6,7 +6,7 @@
 /*   By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 00:22:42 by edegarci          #+#    #+#             */
-/*   Updated: 2025/02/15 14:21:48 by edegarci         ###   ########.fr       */
+/*   Updated: 2025/02/15 14:53:10 by edegarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	send_char(pid_t pid, char c)
 		{
 			if (kill(pid, SIGUSR1) == -1)
 			{
-				write(1, "Error sending SIGUSR1\n", 22);
+				write(1, "Failed to send SIGUSR1\n", 21);
 				exit(EXIT_FAILURE);
 			}
 		}
@@ -31,7 +31,7 @@ void	send_char(pid_t pid, char c)
 		{
 			if (kill(pid, SIGUSR2) == -1)
 			{
-				write(1, "Error sending SIGUSR2\n", 22);
+				write(1, "Failed to send SIGUSR2\n", 21);
 				exit(EXIT_FAILURE);
 			}
 		}

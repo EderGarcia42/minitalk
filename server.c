@@ -6,7 +6,7 @@
 /*   By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 00:18:57 by edegarci          #+#    #+#             */
-/*   Updated: 2025/02/15 09:42:53 by edegarci         ###   ########.fr       */
+/*   Updated: 2025/02/15 14:51:37 by edegarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,12 @@ int	main(void)
 	sigemptyset(&sa.sa_mask);
 	if (sigaction(SIGUSR1, &sa, NULL) == -1)
 	{
-		write(1, "Error setting up signal handler\n", 31);
+		write(1, "Error: sigaction failed\n", 24);
 		exit(EXIT_FAILURE);
 	}
 	if (sigaction(SIGUSR2, &sa, NULL) == -1)
 	{
-		write(1, "Error setting up signal handler\n", 31);
+		write(1, "Error: sigaction failed\n", 24);
 		exit(EXIT_FAILURE);
 	}
 	while (1)
